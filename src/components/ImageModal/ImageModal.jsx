@@ -15,7 +15,13 @@ const ImageModal = ({ isOpen, onRequestClose, imageUrl, alt }) => {
       <button className={css.closeBtn} onClick={onRequestClose}>
         <RxCross2 />
       </button>
-      <img src={imageUrl} alt={alt} className={css.modalImage} />
+      {imageUrl && (
+        <img
+          src={imageUrl}
+          alt={alt || "Modal image"}
+          className={css.modalImage}
+        />
+      )}
     </Modal>
   );
 };
